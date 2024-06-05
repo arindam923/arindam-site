@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 import { cn } from "@/lib/utils";
+import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,10 +20,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("bg-neutral-950 w-full min-h-screen text-white ", inter.className)}>
+      <body
+        className={cn(
+          "bg-neutral-950 w-full min-h-screen text-white ",
+          inter.className
+        )}
+      >
         <Header />
         {children}
         <Footer />
+        <Toaster />
       </body>
     </html>
   );
