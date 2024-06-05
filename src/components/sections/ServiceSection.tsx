@@ -29,11 +29,11 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
     description
 }) => {
     return (
-        <div className="lg:w-[60%]">
+        <div className="p-8 cursor-pointer hover:ring-1 ring-stone-800 rounded-md">
             <h3 className="uppercase text-sm text-primary tracking-wider font-semibold">{heading}</h3>
             <h1 className="text-2xl font-semibold leading-normal">{title}</h1>
-            <p className="text-sm leading-5 text-stone-400">{description}</p>
-            <button className="w-[60%] rounded-md mt-2 bg-gradient-to-br from-primary via-teal-500 text-sm font-semibold shadow-md to-blue-400 py-2 ">
+            <p className="text-xs leading-5  text-stone-400">{description}</p>
+            <button className="w-full rounded-md mt-2 bg-gradient-to-br from-primary via-teal-500 text-sm font-semibold shadow-md to-blue-400 py-2 ">
                 Get Started
             </button>
         </div>
@@ -44,7 +44,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 
 const ServiceSection = () => {
     return (
-        <section className="container mt-5 space-y-4 mx-auto ">
+        <section className="container justify-items-center  mt-5 grid grid-cols-3 gap-2 mx-auto ">
             {serviceData.map(it => (
                 <ServiceCard {...it} key={it.title} />
             ))}

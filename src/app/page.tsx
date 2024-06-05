@@ -18,6 +18,17 @@ const ServiceSection = dynamic(() => import(
 })
 
 
+const PortfolioSection = dynamic(() => import("@/components/sections/PortfolioSection"), {
+  ssr: false,
+  loading: () => <Loader />
+})
+
+
+const TestimonailSection = dynamic(() => import("@/components/sections/TestimonailSection"), {
+  ssr: false,
+  loading: () => <Loader />
+})
+
 
 export default function Home() {
   return (
@@ -26,8 +37,6 @@ export default function Home() {
         <Spotlight fill="#16A34A" />
         <Spotlight fill="#86EFAC" className="absolute top-[200px] left-0" />
         <Spotlight fill="#16A34A" className="absolute left-[80%] top-[20px]" />
-
-
         <div className="flex flex-col items-center">
           <h3 className="text-sm font-semibold">Best Agency , Best Work</h3>
           <h1 className="text-5xl font-bold leading-normal text-center">Excellent Service that <br />is Second to None</h1>
@@ -57,14 +66,14 @@ export default function Home() {
                   </div>
                   +140 Authorized Business Partner
                 </div>
-
               </div>
-
             </div>
           </div>
         </div>
       </div>
       <ServiceSection />
+      <PortfolioSection />
+      <TestimonailSection />
     </main>
   );
 }
