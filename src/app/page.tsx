@@ -73,8 +73,8 @@ export default function Home() {
                 />
                 <div className="text-xs ">
                   <div className="flex items-center">
-                    {new Array(5).fill(0).map((it) => (
-                      <IconStarFilled />
+                    {new Array(5).fill(0).map((it, index) => (
+                      <IconStarFilled key={index} />
                     ))}
                     <p>5.0</p>
                   </div>
