@@ -49,29 +49,28 @@ const ProductSection = dynamic(
     loading: () => <Loader />,
   }
 );
-
 export default function Home() {
   return (
     <main className="dark:bg-black">
-      <div className="bg-grid-white/[0.008] flex items-center justify-center min-h-[90vh] w-full overflow-hidden relative">
+      <div className="bg-grid-white/[0.008] flex items-center justify-center py-8 lg:py-0 lg:min-h-[90vh] w-full overflow-hidden relative">
         <Spotlight fill="#16A34A" />
         <Spotlight fill="#86EFAC" className="absolute top-[200px] left-0" />
         <Spotlight fill="#16A34A" className="absolute left-[80%] top-[20px]" />
-        <div className="flex flex-col items-center">
+        <div className="flex container mx-auto flex-col items-center">
           <h3 className="text-sm font-semibold">Best Agency , Best Work</h3>
-          <h1 className="text-5xl font-bold leading-normal text-center">
+          <h1 className="lg:text-5xl text-2xl font-bold leading-normal text-center">
             Excellent Service that <br />
             is Second to None
           </h1>
-          <p className="lg:w-[60%] text-sm text-stone-400 text-center">
+          <p className="lg:w-[60%] text-xs lg:text-sm text-stone-400 text-center">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum at
             tenetur atque harum magnam quam provident optio praesentium
             doloribus omnis.
           </p>
-          <div className="mt-4 flex items-center flex-col">
+          <div className="mt-4 flex items-center  flex-col">
             <NewsletterSubscription />
-            <div className="mt-4 flex items-center gap-4">
-              <div className="flex items-center text-sm gap-2">
+            <div className="mt-4 flex items-center flex-col lg:flex-row gap-4">
+              <div className="flex items-center text-xs lg:text-sm gap-2">
                 <IconUsers />
                 <span>More than 4000+ Happy custommers.</span>
               </div>
@@ -84,7 +83,7 @@ export default function Home() {
                     "https://i.pravatar.cc/150?img=23",
                   ]}
                 />
-                <div className="text-xs ">
+                <div className="text-xs lg:text-sm">
                   <div className="flex items-center">
                     {new Array(5).fill(0).map((it, index) => (
                       <IconStarFilled key={index} />

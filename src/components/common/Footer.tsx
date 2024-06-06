@@ -7,12 +7,14 @@ const Footer = () => {
         <h2 className="text-2xl font-semibold">
           <span className="text-primary">A</span>Rshop
         </h2>
-        <NewsletterSubscription />
+        <div className="hidden lg:flex">
+          <NewsletterSubscription />
+        </div>
       </div>
-      <div className="grid grid-cols-4 gap-5 py-8">
+      <div className="grid text-xs lg:text-sm lg:grid-cols-4 gap-5 py-8">
         <div>
           <h3 className="text-lg font-semibold mb-4">Links</h3>
-          <ul>
+          <ul className="space-y-2">
             <li>
               <a href="/about" className="text-neutral-400 hover:text-white">
                 About Us
@@ -32,7 +34,7 @@ const Footer = () => {
         </div>
         <div>
           <h3 className="text-lg font-semibold mb-4">Social</h3>
-          <ul>
+          <ul className="space-y-2">
             <li>
               <a
                 href="https://facebook.com/arshop"
@@ -61,7 +63,7 @@ const Footer = () => {
         </div>
         <div>
           <h3 className="text-lg font-semibold mb-4">Legal</h3>
-          <ul>
+          <ul className="space-y-2">
             <li>
               <a
                 href="/privacy-policy"
@@ -91,7 +93,7 @@ const Footer = () => {
           <p className="text-neutral-400">Phone: (123) 456-7890</p>
         </div>
       </div>
-      <div className="text-center text-neutral-400 py-4">
+      <div className="text-center text-xs lg:text-sm text-neutral-400 py-4">
         <p>&copy; {new Date().getFullYear()} ARshop. All rights reserved.</p>
       </div>
     </footer>

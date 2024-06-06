@@ -39,7 +39,7 @@ const Header = () => {
         </h1>
       </div>
 
-      <nav className="flex items-center text-sm space-x-8">
+      <nav className=" hidden lg:flex items-center text-sm space-x-8">
         {links.map((li) => (
           <Link href={li.href} key={li.id}>
             <p className={cn(pathname === li.href && "text-primary")}>

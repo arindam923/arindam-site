@@ -34,7 +34,7 @@ const TeamSection = () => {
     <div className="bg-neutral-900 relative py-16">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-extrabold text-gray-200 mb-8">Our Team</h2>
-        <div className="flex justify-center">
+        <div className="flex justify-center flex-col space-y-2 lg:space-y-0 lg:flex-row">
           {teamMembers.map((member, index) => (
             <motion.div
               key={member.name}
