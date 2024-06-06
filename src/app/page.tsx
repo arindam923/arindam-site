@@ -37,6 +37,19 @@ const PricingSection = dynamic(
   }
 );
 
+const TeamSection = dynamic(() => import("@/components/sections/TeamSection"), {
+  ssr: false,
+  loading: () => <Loader />,
+});
+
+const ProductSection = dynamic(
+  () => import("@/components/sections/ProductSection"),
+  {
+    ssr: false,
+    loading: () => <Loader />,
+  }
+);
+
 export default function Home() {
   return (
     <main className="dark:bg-black">
@@ -88,6 +101,8 @@ export default function Home() {
       <ServiceSection />
       <PortfolioSection />
       <TestimonailSection />
+      <TeamSection />
+      <ProductSection />
       <PricingSection />
     </main>
   );
