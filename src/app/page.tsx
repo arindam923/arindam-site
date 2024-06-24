@@ -1,9 +1,16 @@
 import NewsletterSubscription from "@/components/common/EmailInput";
 import Loader from "@/components/common/Loader";
-import StackAvatar from "@/components/common/StackedAvatar";
+import FUIFeatureSectionWithCards from "@/components/sections/AboutusSection";
+import FUINewsletterWithBackground from "@/components/ui/NewsLetterSubscription";
+import AnimatedGradientText from "@/components/ui/animated-gradient";
+import AvatarCircles from "@/components/ui/avatar-cirlces";
+
 import { Spotlight } from "@/components/ui/spot-light-";
+import { cn } from "@/lib/utils";
 import { IconUsers, IconStarFilled } from "@tabler/icons-react";
+import { ChevronRight } from "lucide-react";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 
 const ServiceSection = dynamic(
   () => import("@/components/sections/ServiceSection"),
@@ -57,52 +64,67 @@ export default function Home() {
         <Spotlight fill="#86EFAC" className="absolute top-[200px] left-0" />
         <Spotlight fill="#16A34A" className="absolute left-[80%] top-[20px]" />
         <div className="flex container mx-auto flex-col items-center">
-          <h3 className="text-sm font-semibold">Best Agency , Best Work</h3>
-          <h1 className="lg:text-5xl text-2xl font-bold leading-normal text-center">
-            Excellent Service that <br />
-            is Second to None
+          <AnimatedGradientText>
+            🎉 <hr className="mx-2 h-4 w-[1px] shrink-0 bg-gray-300" />{" "}
+            <span
+              className={cn(
+                `inline animate-gradient bg-gradient-to-r from-green-600 via-emerald-500 to-blue-600 bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`
+              )}
+            >
+              Introducing ArShop
+            </span>
+            <ChevronRight className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+          </AnimatedGradientText>
+          <h1 className="font-display mt-5 text-center text-4xl font-bold tracking-[-0.02em] text-white md:text-7xl md:leading-[5rem]">
+            Transforming Ideas into{" "}
+            <span className="text-[#00D1B2]">Digital Excellence</span>
           </h1>
-          <p className="lg:w-[60%] text-xs lg:text-sm text-stone-400 text-center">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum at
-            tenetur atque harum magnam quam provident optio praesentium
-            doloribus omnis.
+          <p className="lg:w-[70%] text-xs mt-4 leading-6 lg:text-sm text-stone-400 text-center">
+            At our core, we bring your vision to life with cutting-edge web
+            solutions. Our team of experts is dedicated to delivering seamless,
+            high-performing, and visually stunning digital experiences tailored
+            to your business needs.
           </p>
+
           <div className="mt-4 flex items-center  flex-col">
             <NewsletterSubscription />
-            <div className="mt-4 flex items-center flex-col lg:flex-row gap-4">
-              <div className="flex items-center text-xs lg:text-sm gap-2">
-                <IconUsers />
-                <span>More than 4000+ Happy custommers.</span>
-              </div>
-
-              <div className="flex items-center gap-2">
-                <StackAvatar
-                  images={[
-                    "https://i.pravatar.cc/150?img=12",
-                    "https://i.pravatar.cc/150?img=42",
-                    "https://i.pravatar.cc/150?img=23",
-                  ]}
-                />
-                <div className="text-xs lg:text-sm">
-                  <div className="flex items-center">
-                    {new Array(5).fill(0).map((it, index) => (
-                      <IconStarFilled key={index} />
-                    ))}
-                    <p>5.0</p>
-                  </div>
-                  +140 Authorized Business Partner
+            <div className="mt-10 flex items-center flex-col lg:flex-row gap-4">
+              <AvatarCircles
+                numPeople={140}
+                avatarUrls={[
+                  "https://i.pravatar.cc/150?img=12",
+                  "https://i.pravatar.cc/150?img=42",
+                  "https://i.pravatar.cc/150?img=23",
+                  "https://i.pravatar.cc/150?img=18",
+                ]}
+              />
+              <div className="text-xs lg:text-sm">
+                <div className="flex space-x-1 items-center">
+                  {new Array(5).fill(0).map((it, index) => (
+                    <IconStarFilled
+                      className="text-yellow-500 h-4 w-4"
+                      key={index}
+                    />
+                  ))}
+                  <p>5.0</p>
                 </div>
+                +140 Happy custommers.
               </div>
             </div>
           </div>
         </div>
       </div>
-      <ServiceSection />
-      <PortfolioSection />
-      <TestimonailSection />
+      {/* <ServiceSection />
+      <DemoForm />
+     
       <TeamSection />
       <ProductSection />
+     */}
+      <FUIFeatureSectionWithCards />
+      <PortfolioSection />
       <PricingSection />
+      <TestimonailSection />
+      <FUINewsletterWithBackground />
     </main>
   );
 }

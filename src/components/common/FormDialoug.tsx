@@ -14,28 +14,13 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { Textarea } from "../ui/textarea";
 import { Checkbox } from "../ui/checkbox";
-import { useState } from "react";
-import { CheckedState } from "@radix-ui/react-checkbox";
-import { DatePickerDemo } from "./DatePicker";
 import { toast } from "sonner";
+import { sql } from "@/lib/db";
+import { revalidatePath } from "next/cache";
+import { useRouter } from "next/navigation";
+import { fixMetting } from "@/app/action";
 
 const FormDialog = () => {
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
-  const [shouldWeCall, setShouldWeCall] = useState<CheckedState>();
-  const [projectExplanation, setProjectExplanation] = useState("");
-
-  const [date, setDate] = useState<Date>();
-
-  const onSubmit = () => {
-    setEmail("");
-    setName("");
-    setProjectExplanation("");
-    toast("Data submitted Successfully", {
-      description: `A meeting has been set for ${date} `,
-    });
-  };
-
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -51,15 +36,14 @@ const FormDialog = () => {
             projecy with us for free.
           </DialogDescription>
         </DialogHeader>
-        <div className="space-y-4">
+        <form action={fixMetting} method="POST" className="space-y-4">
           <div className="text-sm space-y-2">
             <Label className="text-xs" htmlFor="email">
               Email Address
             </Label>
             <Input
               type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              name="email"
               className="bg-neutral-800  border-none"
               id="email"
               placeholder="Enter your email address"
@@ -72,18 +56,13 @@ const FormDialog = () => {
             <Input
               className="bg-neutral-800 border-none"
               type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              name="name"
               id="name"
               placeholder="Enter your Full Name"
             />
           </div>
           <div className="flex items-center space-x-2">
-            <Checkbox
-              checked={shouldWeCall}
-              onCheckedChange={(val) => setShouldWeCall(val)}
-              id="call"
-            />
+            <Checkbox id="call" />
             <label
               htmlFor="terms"
               className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
@@ -91,23 +70,18 @@ const FormDialog = () => {
               Schedule a Call ?
             </label>
           </div>
-          {shouldWeCall && <DatePickerDemo date={date} setDate={setDate} />}
+          {/* {shouldWeCall && <DatePickerDemo date={date} setDate={setDate} />} */}
           <div className="text-sm space-y-2">
             <Label className="text-xs" htmlFor="name">
               Explain your Project
             </Label>
-            <Textarea
-              value={projectExplanation}
-              onChange={(e) => setProjectExplanation(e.target.value)}
-              className="bg-neutral-800 border-none"
-            />
+            <Textarea name="project" className="bg-neutral-800 border-none" />
           </div>
-        </div>
-        <DialogFooter>
-          <Button onClick={onSubmit} className="w-full" type="submit">
-            Submit
-          </Button>
-        </DialogFooter>
+
+          <DialogFooter>
+            <Button type="submit">Submit</Button>
+          </DialogFooter>
+        </form>
       </DialogContent>
     </Dialog>
   );

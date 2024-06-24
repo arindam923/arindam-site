@@ -1,67 +1,80 @@
+import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 import Image from "next/image";
 
 const PortfolioSection = () => {
   return (
-    <section className="container mx-auto mt-5">
-      <h3 className="uppercase text-sm text-primary font-semibold tracking-wider">
-        our portfolio
-      </h3>
-      <p className="text-stone-400 text-sm mt-2 ">
-        Have a look at our last copuple projects . Where Inovation met
-        experienced create somethig really magical
+    <div className="mt-10 container mx-auto">
+      <p className="mb-10 text-center text-4xl font-bold tracking-tight text-white sm:text-5xl font-geist md:leading-4">
+        Some of our best <span className="text-primary">Work</span>
       </p>
-
-      <div className="grid mt-5 grid-cols-1 lg:grid-cols-8 lg:grid-rows-2 gap-4">
-        <div className="col-span-4 border border-slate-800 cursor-pointer h-[300px] group relative row-span-1 transition-all duration-75 ease-in-out rounded-md p-5">
-          <Image
-            src={"/pro1.png"}
-            className="rounded-md object-cover group-hover:object-contain"
-            fill
-            alt="project"
-          />
-        </div>
-        <div className="col-span-2 border border-slate-800 cursor-pointer h-[300px] group relative row-span-1 transition-all duration-75 ease-in-out rounded-md p-5">
-          <Image
-            src={"/pro2.png"}
-            className="rounded-md object-cover group-hover:object-contain"
-            fill
-            alt="project"
-          />
-        </div>
-        <div className="col-span-2 border border-slate-800 cursor-pointer h-[300px] group relative row-span-1 transition-all duration-75 ease-in-out rounded-md p-5">
-          <Image
-            src={"/pro3.png "}
-            className="rounded-md object-cover group-hover:object-contain"
-            fill
-            alt="project"
-          />
-        </div>
-        <div className="col-span-2 border border-slate-800 cursor-pointer h-[300px] group relative row-span-1 transition-all duration-75 ease-in-out rounded-md p-5">
-          <Image
-            src={"/pro4.png"}
-            className="rounded-md object-cover group-hover:object-contain"
-            fill
-            alt="project"
-          />
-        </div>
-        <div className="col-span-2 border border-slate-800 cursor-pointer h-[300px] group relative row-span-1 transition-all duration-75 ease-in-out rounded-md p-5">
-          <Image
-            src={"/pro5.png"}
-            className="rounded-md object-cover group-hover:object-contain"
-            fill
-            alt="project"
-          />
-        </div>
-        <div className="col-span-4 border border-slate-800 cursor-pointer h-[300px] group relative row-span-1 transition-all duration-75 ease-in-out rounded-md p-5">
-          <Image
-            src={"/pro6.png"}
-            className="rounded-md object-cover group-hover:object-contain"
-            fill
-            alt="project"
-          />
-        </div>
-      </div>
-    </section>
+      <BentoGrid>
+        <BentoCard
+          className="col-span-2"
+          name="Crypto Dashboard"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius."
+          href="#"
+          cta="Buy Now"
+          background={
+            <div className="relative w-full h-full">
+              <Image
+                className="object-cover"
+                src="/pro2.png"
+                alt="free-trial"
+                fill
+              />
+            </div>
+          }
+        />
+        <BentoCard
+          className="col-span-1"
+          name="Ticket Booking App"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius."
+          href="#"
+          cta="Buy Now"
+          background={
+            <div className="relative w-full h-full">
+              <Image src="/pro3.png" alt="free-trial" fill />
+            </div>
+          }
+        />
+        <BentoCard
+          className="col-span-1"
+          name="Nft Marketplace"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius."
+          href="#"
+          cta="Buy Now"
+          background={
+            <div className="relative w-full h-full">
+              <Image src="/pro4.png" alt="free-trial" fill />
+            </div>
+          }
+        />
+        <BentoCard
+          className="col-span-1"
+          name="Automation Tool"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius."
+          href="#"
+          cta="Buy now"
+          background={
+            <div className="relative w-full h-full">
+              <Image src="/pro5.png" alt="free-trial" fill />
+            </div>
+          }
+        />
+        <BentoCard
+          className="col-span-1"
+          name="Automation Tool"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius."
+          href="#"
+          cta="Buy now"
+          background={
+            <div className="relative w-full h-full">
+              <Image src="/pro1.png" alt="free-trial" fill />
+            </div>
+          }
+        />
+      </BentoGrid>
+    </div>
   );
 };
 
