@@ -1,24 +1,15 @@
+import { Spotlight } from "@/components/ui/spot-light-";
+import { cn } from "@/lib/utils";
+import { IconStarFilled } from "@tabler/icons-react";
+import { ChevronRight } from "lucide-react";
+import dynamic from "next/dynamic";
+
 import NewsletterSubscription from "@/components/common/EmailInput";
 import Loader from "@/components/common/Loader";
 import FUIFeatureSectionWithCards from "@/components/sections/AboutusSection";
 import FUINewsletterWithBackground from "@/components/ui/NewsLetterSubscription";
 import AnimatedGradientText from "@/components/ui/animated-gradient";
 import AvatarCircles from "@/components/ui/avatar-cirlces";
-
-import { Spotlight } from "@/components/ui/spot-light-";
-import { cn } from "@/lib/utils";
-import { IconUsers, IconStarFilled } from "@tabler/icons-react";
-import { ChevronRight } from "lucide-react";
-import dynamic from "next/dynamic";
-import Image from "next/image";
-
-const ServiceSection = dynamic(
-  () => import("@/components/sections/ServiceSection"),
-  {
-    ssr: false,
-    loading: () => <Loader />,
-  }
-);
 
 const PortfolioSection = dynamic(
   () => import("@/components/sections/PortfolioSection"),
@@ -44,21 +35,9 @@ const PricingSection = dynamic(
   }
 );
 
-const TeamSection = dynamic(() => import("@/components/sections/TeamSection"), {
-  ssr: false,
-  loading: () => <Loader />,
-});
-
-const ProductSection = dynamic(
-  () => import("@/components/sections/ProductSection"),
-  {
-    ssr: false,
-    loading: () => <Loader />,
-  }
-);
 export default function Home() {
   return (
-    <main className="dark:bg-black">
+    <main className="bg-black">
       <div className="bg-grid-white/[0.008] flex items-center justify-center py-8 lg:py-0 lg:min-h-[90vh] w-full overflow-hidden relative">
         <Spotlight fill="#16A34A" />
         <Spotlight fill="#86EFAC" className="absolute top-[200px] left-0" />
