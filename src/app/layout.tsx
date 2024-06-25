@@ -9,8 +9,36 @@ import { Toaster } from "@/components/ui/sonner";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Agency Website",
-  description: "All your dev needs complete in one place",
+  title: "Modern Web Development Agency",
+  description:
+    "Premium web and app templates to elevate your digital presence.",
+  keywords:
+    "web templates, app templates, web development, app development, UI kits, responsive design",
+  openGraph: {
+    title: "Modern Web Development Agency",
+    description:
+      "Premium web and app templates to elevate your digital presence.",
+    url: "https://www.arindam.shop", // Replace with your actual URL
+    type: "website",
+    images: [
+      {
+        url: "https://www.arindam.shop/arshop.png", // Replace with your actual image URL
+        width: 1200,
+        height: 630,
+        alt: "Modern Web Development Agency",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@ArindamRoy89203", // Replace with your actual Twitter handle
+    creator: "@ArindamRoy89203", // Replace with your actual Twitter handle
+    title: "Modern Web Development Agency",
+    description:
+      "Premium web and app templates to elevate your digital presence.",
+  },
+  robots: "index, follow",
+  viewport: "width=device-width, initial-scale=1.0",
 };
 
 export default function RootLayout({
