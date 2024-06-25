@@ -37,7 +37,7 @@ const PricingSection = dynamic(
 
 export default function Home() {
   return (
-    <main className="bg-black">
+    <main>
       <div className="bg-grid-white/[0.008] flex items-center justify-center py-8 lg:py-0 lg:min-h-[90vh] w-full overflow-hidden relative">
         <Spotlight fill="#16A34A" />
         <Spotlight fill="#86EFAC" className="absolute top-[200px] left-0" />
